@@ -5,44 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milind Rai - Portfolio</title>
     <style>
+        /* Global styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             transition: background-color 0.3s, color 0.3s;
+            background-color: #f4f4f9;
         }
         header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 15px 0;
+            padding: 20px 0;
             position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        main {
-            padding: 20px;
-            text-align: center;
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
         }
         footer {
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Sun/Moon Icon Styles */
+        /* Main section */
+        main {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        main h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        main .about-me {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Sun/Moon Icon */
         .theme-toggle {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 25px;
+            right: 25px;
             cursor: pointer;
-            font-size: 24px;
+            font-size: 30px;
+            transition: transform 0.3s;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.1);
         }
 
-        /* Dark theme styles */
+        /* Dark Theme */
         body.dark {
             background-color: #2c2c2c;
             color: white;
@@ -53,29 +76,36 @@
         footer.dark {
             background-color: #333;
         }
-
+        footer.dark a {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Milind Rai - Portfolio</h1>
-        <!-- Sun/Moon icon to toggle theme -->
         <span class="theme-toggle" id="theme-toggle">🌙</span>
     </header>
+    
     <main>
         <h2>Welcome to my Portfolio!</h2>
-        <p>This is a simple webpage showcasing my work.</p>
 
-        <div>
-            <h3>About Me:</h3>
+        <div class="about-me">
+            <h3>About Me</h3>
             <p><strong>Email:</strong> milind.22scse1100056@galgotiasuniversity.edu.in</p>
             <p><strong>Phone:</strong> 9120847219</p>
             <p><strong>Course:</strong> B.Sc (Hons) Computer Science, Galgotias University</p>
             <p><strong>Hometown:</strong> Varanasi</p>
         </div>
+
+        <div>
+            <h3>Projects & Skills</h3>
+            <p>Currently working on multiple web development and programming projects, aiming to enhance my skills in various technologies including Python, JavaScript, HTML/CSS, and more.</p>
+        </div>
     </main>
+
     <footer>
-        <p>Contact me at: milind@example.com</p>
+        <p>Contact me at: <a href="mailto:milind@example.com">milind@example.com</a></p>
     </footer>
 
     <script>
