@@ -10,12 +10,14 @@
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
         header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
             padding: 15px 0;
+            position: relative;
         }
         main {
             padding: 20px;
@@ -30,18 +32,72 @@
             width: 100%;
             bottom: 0;
         }
+
+        /* Sun/Moon Icon Styles */
+        .theme-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Dark theme styles */
+        body.dark {
+            background-color: #2c2c2c;
+            color: white;
+        }
+        header.dark {
+            background-color: #333;
+        }
+        footer.dark {
+            background-color: #333;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <h1>Milind Rai - Portfolio</h1>
+        <!-- Sun/Moon icon to toggle theme -->
+        <span class="theme-toggle" id="theme-toggle">🌙</span>
     </header>
     <main>
         <h2>Welcome to my Portfolio!</h2>
         <p>This is a simple webpage showcasing my work.</p>
+
+        <div>
+            <h3>About Me:</h3>
+            <p><strong>Email:</strong> milind.22scse1100056@galgotiasuniversity.edu.in</p>
+            <p><strong>Phone:</strong> 9120847219</p>
+            <p><strong>Course:</strong> B.Sc (Hons) Computer Science, Galgotias University</p>
+            <p><strong>Hometown:</strong> Varanasi</p>
+        </div>
     </main>
     <footer>
         <p>Contact me at: milind@example.com</p>
     </footer>
+
+    <script>
+        // Toggle theme functionality
+        const themeToggleButton = document.getElementById("theme-toggle");
+        const body = document.body;
+        const header = document.querySelector("header");
+        const footer = document.querySelector("footer");
+
+        // Switch between dark and light theme
+        themeToggleButton.addEventListener("click", () => {
+            body.classList.toggle("dark");
+            header.classList.toggle("dark");
+            footer.classList.toggle("dark");
+
+            // Change the icon based on theme
+            if (body.classList.contains("dark")) {
+                themeToggleButton.innerHTML = "🌞";  // Sun icon for light theme
+            } else {
+                themeToggleButton.innerHTML = "🌙";  // Moon icon for dark theme
+            }
+        });
+    </script>
 </body>
 </html>
